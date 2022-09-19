@@ -71,7 +71,7 @@ async function startGojoMdNx() {
     const callerId = json.content[0].attrs['call-creator']
     if (json.content[0].tag == 'offer') {
     let pa7rick = await GojoMdNx.sendContact(callerId, global.owner)
-    GojoMdNx.sendMessage(callerId, { text: `تم حظرك من استخدام البوت🚨 !\n لا تتصل على البوت مرة أخرى 🙄!\n يجب عليك التحدث مع المالك 📴 `}, { quoted : pa7rick })
+    GojoMdNx.sendMessage(callerId, { text: `تم حظرك من استخدام البوت 🚨\n لا تتصل على البوت مرة أخرى 🙄\n يجب عليك التحدث مع المالك 📴. `}, { quoted : pa7rick })
     await sleep(8000)
     await GojoMdNx.updateBlockStatus(callerId, "block")
     }
