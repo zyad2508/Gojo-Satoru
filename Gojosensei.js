@@ -1387,35 +1387,6 @@ case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 		await GojoMdNx.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
-switch(command) {
-	
- case 'بان': {
- if (isBan) return reply(mess.ban)	 			
-if (!isCreator) return replay(mess.owner)
-if (args[0] === "on") {
-if (isBanChat) return replay('Already Banned')
-banchat.push(from)
-replay('النجاح في حظر المجموعه')
-var groupe = await GojoMdNx.groupMetadata(from)
-var members = groupe['participants']
-var mems = []
-members.map(async adm => {
-mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
-})
-GojoMdNx.sendMessage(from, {text: `\`\`\`「 ⚠️تحذير⚠️ 」\`\`\`\n\nTتم تعطيل الروبوت في هذه المجموعة ، والآن لن يتمكن أحد من استخدام الروبوت في هذه المجموعة!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
-} else if (args[0] === "off") {
-if (!isBanChat) return replay('Already Unbanned')
-let off = banchat.indexOf(from)
-banchat.splice(off, 1)
-replay('النجاح في إلغاء حظر الجروب')
-} else {
-  let buttonsntnsfw = [
-  { buttonId: `${command} on`, buttonText: { displayText: 'حظر' }, type: 1 },
-  { buttonId: `${command} off`, buttonText: { displayText: 'الغاء حظر' }, type: 1 }
-  ]
-  await GojoMdNx.sendButtonText(m.chat, buttonsntnsfw, `يرجى النقر على الزر أدناه\n\nحظر والغاء حظر`, `${global.botname}`, m)
-  }
-  }
 	break
         case 'حظر': {
 		if (!isCreator) return replay(`${mess.owner}`)
