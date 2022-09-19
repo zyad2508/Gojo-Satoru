@@ -148,7 +148,7 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 ⭐✑ هلا👋 @${num.split("@")[0]},
 ⭐✑ نورت جروبنا ${metadata.subject}
 
-⭐✑ Description: ${metadata.desc}
+⭐✑ الوصف : ${metadata.desc}
 
 ⭐✑ اتمنى ان تستمتع معنا 😍✨!!`} )
                 } else if (anu.action == 'remove') {
